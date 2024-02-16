@@ -15,32 +15,9 @@ class TrainTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $trains = [
-        [
-            'azienda' => 'Trenitalia',
-            'stazione_di_partenza' => 'Roma Termini',
-            'stazione_di_arrivo' => 'Milano Centrale',
-            'orario_di_partenza' => '08:00:00',
-            'orario_di_arrivo' => '12:00:00',
-            'codice_treno' => 'AV950',
-            'numero_carrozze' => 12,
-            'in_orario' => true,
-            'cancellato' => false
-        ],
-        [
-            'azienda' => 'Trenitalia',
-            'stazione_di_partenza' => 'Roma Termini',
-            'stazione_di_arrivo' => 'Milano Centrale',
-            'orario_di_partenza' => '08:00:00',
-            'orario_di_arrivo' => '12:00:00',
-            'codice_treno' => 'AV950',
-            'numero_carrozze' => 12,
-            'in_orario' => true,
-            'cancellato' => false
-        ],
-    ];
 
-    for($i=0; $i<20; $i++){
+
+    for($i=0; $i<100; $i++){
         $new_train = new Train();
         $new_train->azienda = $faker->words(2, true);
         $new_train->stazione_di_partenza =  $faker->words(5, true);

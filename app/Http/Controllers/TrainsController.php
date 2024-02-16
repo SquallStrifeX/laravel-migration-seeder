@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Train;
 
 class TrainsController extends Controller
-
+{
+    public function index()
     {
-        public function index(){
-            $trains = Train::orderBy('codice_treno')->get();
-            return view('home', compact('trains'));
-        }
-}
+
+
+        $filtered_trains = Train::where('orario_di_partenza', '=', '2024-02-16')->get();
+
+        return view('home', compact('filtered_trains'));
+    }
+};
